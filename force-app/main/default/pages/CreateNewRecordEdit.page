@@ -1,0 +1,26 @@
+<apex:page controller="CreateNewRecordEditController">
+    <apex:sectionHeader title="New Record"/>
+  <apex:form >
+      <apex:pageBlock title="General Information" >
+          <apex:pageBlockSection title="Record Informations">
+              <apex:pageBlockSectionItem >
+                  First Name <apex:inputText value="{!FName}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  Last Name <apex:inputText value="{!LName}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  Mobile <apex:inputText value="{!mobile}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  Email <apex:inputText value="{!email}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+              <apex:pageBlockButtons >
+                  <apex:commandButton value="Save" action="{!save}"/>
+                  <apex:commandButton value="Save & New" action="{!saveNew}"/>
+                  <apex:commandButton value="Cancel" action="{!cancel}"/>
+              </apex:pageBlockButtons>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="showAccountonvisualforce">
+    <apex:form >
+        <apex:pageBlock title="List of Account">
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!acc}" var="acc">
+                                   
+                </apex:pageBlockTable>            
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

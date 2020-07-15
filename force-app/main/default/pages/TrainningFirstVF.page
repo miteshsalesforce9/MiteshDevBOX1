@@ -1,0 +1,15 @@
+<apex:page standardController="Energy_Audit__c">
+    <apex:form >
+        <apex:pageBlock title="Edit Section">
+            <apex:pageblockSection >
+                <apex:inputField value="{!Energy_Audit__c.Annual_Energy_Usage_kWh__c}"/>
+                <apex:inputField value="{!Energy_Audit__c.Average_Annual_Electric_Cost__c}"/>
+                <apex:inputField value="{!Energy_Audit__c.Type_of_Installation__c}"/>
+            </apex:pageblockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}"/>
+                <apex:commandButton value="Quick Save" action="{!QuickSave}"/>            
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

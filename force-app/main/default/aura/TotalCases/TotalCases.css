@@ -1,0 +1,27 @@
+.THIS .points-block {
+	text-align: center;
+    margin-right: 8px;
+    padding: 8px 12px;
+    border-radius: 0.25rem;
+    border: solid 1px rgb(216, 221, 230);
+} 
+.THIS .points-block.green {
+	color: #008000;
+    border: solid 3px #008000;
+} 
+.THIS .points-block.orange {
+	color: #ff6633;
+    border: solid 3px #ff6633;
+} 
+.THIS .points {
+	font-size: 32px;
+	line-height: 32px;
+	font-weight: 500;
+    margin-right: 12px;
+    margin: 0;
+    padding: 0;
+} 
+.THIS .chart {
+    position: relative;
+    height: 40px;
+}

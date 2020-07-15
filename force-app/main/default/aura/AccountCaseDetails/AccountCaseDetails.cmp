@@ -1,0 +1,70 @@
+<aura:component controller ="AccountCaseDetailsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:handler name="init" action="{!c.getAccounts}" value="{!this}" access="global" />
+    <aura:attribute name="accountsToDisplay" type="Account[]"/>
+    
+    <lightning:card>
+        <aura:iteration items="{!v.accountsToDisplay}" var="acc" >
+            <div class="slds">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+                        <b>Account Name</b> <br/>{!acc.Name}
+                    </div>
+                    <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+                        <b>Phone</b><br/>{!acc.Phone}
+                    </div>
+                </div>
+            </div> <br/>
+            
+            <div class="slds">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+                        <b>Industry</b> <br/>{!acc.Industry}
+                    </div>
+                    <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+                        <b>Annual Revenue</b> <br/>{!acc.AnnualRevenue}
+                    </div>
+                </div>
+            </div> <br/>
+                
+            <div class="CaseInfo">Related Case Informations</div>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate">Case Number</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate">Subject</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate">Status</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate">Priority</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                 <aura:iteration items="{!acc.Cases}" var="case">
+                        <tr>
+                            <td data-label="Account Name">
+                                <div class="slds-truncate" title="">{!case.CaseNumber}</div>
+                            </td>
+                            <td data-label="Industry">
+                                <div class="slds-truncate" title="">{!case.Subject}</div>
+                            </td>
+                            <td data-label="Industry">
+                                <div class="slds-truncate" title="">{!case.Status}</div>
+                            </td>
+                            <td data-label="Industry">
+                                <div class="slds-truncate" title="">{!case.Priority}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+            
+        </aura:iteration> 
+    </lightning:card>            
+</aura:component>

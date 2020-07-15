@@ -1,0 +1,25 @@
+<apex:page controller="newRecordDetailsController">
+    <apex:sectionHeader title="New Record Details"/>
+  <apex:form >
+      <apex:pageBlock title="General Information" >
+          <apex:pageBlockSection title="Record Informations">
+              <apex:pageBlockSectionItem >
+                  First Name <apex:outputText value="{!FName}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  Last Name <apex:outputText value="{!LName}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  Mobile <apex:outputText value="{!mobile}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  Email <apex:outputText value="{!email}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+              <apex:pageBlockButtons >
+                  <apex:commandButton value="Edit" action="{!edit}"/>
+                  <apex:commandButton value="Delete" action="{!del}"/>
+              </apex:pageBlockButtons>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

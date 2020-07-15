@@ -1,0 +1,22 @@
+<aura:component controller="accountsWithContactsClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <aura:attribute name="accounts" type="Account[]" />
+
+        <aura:iteration items="{!v.accounts}" var="acc" >
+            <tr>  
+                <td> {!acc.Name}  </td>
+
+                    <aura:iteration items="{!acc.Cases}" var="case" >
+                        <tr>
+                            <td>{!case.CaseNumber}</td>
+                        </tr>
+                    </aura:iteration>
+                <aura:iteration items="{!acc.Contact}" var="con" >
+                        <tr>
+                            <td>{!con.Name}</td>
+                        </tr>
+                    </aura:iteration>
+            </tr> 
+         </aura:iteration>                                           
+
+</aura:component>

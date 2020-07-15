@@ -1,0 +1,21 @@
+<apex:page controller="createNewRecordController">
+    <apex:form >
+        <apex:sectionHeader title="New Record Home"/>
+        <apex:pageBlock title="Recent New Records">
+            <apex:pageblockButtons location="Top">
+                <apex:commandButton value="New" action="{!createNewRecord}"/>
+            </apex:pageblockButtons>
+            
+            <apex:pageblockTable value="{!NewRecordList}" var="n">
+                <apex:column value="{!n.Name}"/>
+                <apex:column value="{!n.First_Name__c}"/>
+                <apex:column value="{!n.Last_Name__c}"/>
+                <apex:column value="{!n.Email__c}"/>
+                <apex:column value="{!n.Mobile__c}"/>
+                <apex:column value="{!n.CreatedDate }"/>
+                Delete <apex:commandButton value="Delete" action="delete"/>
+            </apex:pageblockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,78 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="OneConnectStartPopupService" access="global" >
+    
+    <!-- Used to populate or hide the modal -->
+    <aura:attribute name="showModal" type="boolean" />
+    
+    <!-- Handler to check the flag showpopup -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!-- Show the modal if user is a newly registered user otherwise hide it -->
+    <aura:if isTrue="{!v.showModal}">
+        <div style="height: 1000px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">                        
+                        <p id="modal-heading-01" style=" font-size: 15px;">What can you do in One Connect?</p>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium pageCenter" id="modal-content-id-1">
+                        
+                        <table>
+                            <tr>
+                                <td>
+                                    <lightning:icon iconName="utility:add" alternativeText="add" />
+                                </td>
+                                <td>
+                                    <h2 class="slds-text-heading_small slds-m-left_small">Place orders</h2>
+                                    <p class="slds-m-left_small">Easily buy the proucts your company needs.</p>
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td>
+                                    <lightning:icon iconName="utility:sync" alternativeText="sync" />
+                                </td>
+                                <td>
+                                    <h2 class="slds-text-heading_small slds-m-left_small">Reorder</h2>
+                                    <p class="slds-m-left_small">Speed up your order placement process.</p>
+                                </td> 
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <lightning:icon iconName="action:map" size="medium" alternativeText="map" />
+                                </td>
+                                <td>
+                                    <h2 class="slds-text-heading_small slds-m-left_small">Track orders</h2>
+                                    <p class="slds-m-left_small">Track any order place with us in a couple of clicks.</p>
+                                </td> 
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <lightning:icon iconName="utility:connected_apps" alternativeText="connected_apps" /> 
+                                </td>
+                                <td>
+                                    <h2 class="slds-text-heading_small slds-m-left_small">Request samples</h2>
+                                    <p class="slds-m-left_small">And learn more about what you can do with our products.</p>
+                                </td> 
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <lightning:icon iconName="utility:search" alternativeText="search" /> 
+                                </td>
+                                <td>
+                                    <h2 class="slds-text-heading_small slds-m-left_small">Find documents</h2>
+                                    <p class="slds-m-left_small">Self-service access to order and product documentation.</p>
+                                </td> 
+                            </tr>
+                        </table>
+                    </div>
+                    <footer class="slds-modal__footer slds-text-align_center">
+                        <lightning:button variant="brand" label="Go to One Connect" title="Go to One Connect" onclick="{! c.closeModal }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+</aura:component>

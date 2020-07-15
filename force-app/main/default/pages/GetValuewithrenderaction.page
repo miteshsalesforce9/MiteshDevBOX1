@@ -1,0 +1,13 @@
+<apex:page controller="GetValuewithrenderaction" standardStylesheets="true">
+  <apex:form >
+      <apex:pageBlock title="Get Account with Render">
+          <apex:commandButton title="Direct" value="direct" Action="{!direct}" reRender="rerender"/>
+          <apex:commandButton title="Channel" value="channel" Action="{!channel}" reRender="rerender"/>
+          
+          <apex:pageBlockTable value="{!acts}" var="a" id="rerender">
+              <apex:column value="{!a.Name}"/>
+              <apex:column value="{!a.Type}"/>          
+          </apex:pageBlockTable>          
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

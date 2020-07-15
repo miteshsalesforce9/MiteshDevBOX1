@@ -1,0 +1,21 @@
+<aura:component controller="TotalCaseController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+     
+    <aura:attribute name="Total_case__c" type="String" /> 
+    <aura:attribute name="ID" type="String" />      
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card title="{!v.Subject}" >    
+        <p class="slds-p-horizontal--small slds-align_absolute-center" >
+             <div aura:id="chart" >
+                <lightning:layout >
+                    <lightning:layoutitem class="{! 'points-block ' + v.status}" >
+                        <div class="points">{!v.totalcase.Total_Cases__c}</div>
+                    </lightning:layoutitem>                                    
+                </lightning:layout>
+             </div> 
+            </p>  
+    </lightning:card>
+    
+    
+</aura:component>

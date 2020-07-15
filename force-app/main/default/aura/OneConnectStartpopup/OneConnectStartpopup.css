@@ -1,0 +1,18 @@
+.THIS .slds-modal__container{
+    max-width: 70rem !important;
+    width:30% !important;
+    
+}
+
+.THIS .pageCenter {
+	text-align: center;
+}
+
+.THIS table {
+	max-width: 300px;
+    display: inline-table;
+}
+
+.THIS table tr {
+    height:70px;
+}

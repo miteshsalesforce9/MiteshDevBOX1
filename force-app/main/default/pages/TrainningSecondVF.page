@@ -1,0 +1,18 @@
+<apex:page standardController="Account" recordSetVar="account">
+    <apex:form >
+        <apex:pageBlock title="The List of Account with Pagination">
+            <apex:pageBlockTable value="{!account}" var="acc">
+                <apex:column value="{!acc.Name}"/>
+                <apex:column value="{!acc.Phone}"/>
+                <apex:column value="{!acc.Type}"/>
+                <apex:column value="{!acc.Industry}"/>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+                <apex:commandButton Value="Next" action="{!Next}"/>
+                <apex:commandButton Value="Previous" action="{!Previous}"/>
+            </apex:pageBlockButtons>
+                <apex:commandLink Value="First" action="{!First}"/> 
+                <apex:commandLink Value="Last" action="{!Last}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
